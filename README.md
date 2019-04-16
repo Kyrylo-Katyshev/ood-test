@@ -1,4 +1,4 @@
-### Exists classes and an interface:
+### The Application has follow classes and an interface:
 ```php
 class Server
 {
