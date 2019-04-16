@@ -39,25 +39,25 @@ interface MessageSender {
 }
 ```
 
-####Supported Protocol Formats:
-#####V1:
+#### Supported Protocol Formats:
+##### V1:
 ```json
 {
-  'name': '@author',
-  'value'': '@subject'
+  "name": "@author",
+  "value": "@subject"
 }
 ```
 
-#####V2:
+##### V2:
 ```json
 {
-  'author': '@author',
-  'subject'': '@subject',
-  'text': '@text'
+  "author": "@author",
+  "subject": "@subject",
+  "text": "@text"
 }
 ```
 
-#####V3:
+##### V3:
 ```xml
 <message>
     <title>@subject</title>     
@@ -65,4 +65,4 @@ interface MessageSender {
 </message>
 ```
 
-###Task: Need to implement a class of MessageSender interface.
+### Task: Need to implement a class of MessageSender interface.
