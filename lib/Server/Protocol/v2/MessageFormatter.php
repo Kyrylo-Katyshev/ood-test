@@ -2,7 +2,7 @@
 namespace App\Server\Protocol\v2;
 
 use App\Message;
-use App\Server\Server;
+use App\Server;
 use App\Server\Formatter;
 
 class MessageFormatter implements Formatter

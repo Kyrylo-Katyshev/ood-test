@@ -12,6 +12,17 @@ class Server
 
     private $protocol;
 
+    /**
+     * Server constructor.
+     * @param string $url
+     * @param string $protocol
+     */
+    public function __construct($url, $protocol)
+    {
+        $this->url = $url;
+        $this->protocol = $protocol;
+    }
+
     public function getUrl(){
         return $this->url;
     }

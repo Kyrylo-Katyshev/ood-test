@@ -11,7 +11,7 @@ class MessageSenderService implements MessageSender, ClientRegistry
 
     private $logger;
 
-    private $clients;
+    private $clients = [];
 
     public function __construct(ProtocolFactory $protocolFactory, Logger $logger)
     {

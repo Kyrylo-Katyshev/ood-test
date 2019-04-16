@@ -1,8 +1,10 @@
 <?php
-namespace App\Server;
+namespace App\Server\Client;
 
 use App\Server;
 use App\Message;
+use App\Server\Client;
+use App\Server\Formatter;
 
 class HttpClient implements Client
 {
@@ -25,7 +27,7 @@ class HttpClient implements Client
     {
         //TODO: Implement sendMessage() method.
 
-        $data = $this->formatter->format($message);
+        echo sprintf("%s\n", $this->formatter->format($message));
 
         return true;
     }

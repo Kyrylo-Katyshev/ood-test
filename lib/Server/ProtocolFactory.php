@@ -2,6 +2,8 @@
 namespace App\Server;
 
 use App\Server;
+use App\Server\Client\HttpClient;
+use App\Server\Client\FtpClient;
 
 class ProtocolFactory
 {

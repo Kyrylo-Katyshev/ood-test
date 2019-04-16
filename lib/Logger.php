@@ -1,7 +1,9 @@
 <?php
 namespace App;
 
-interface Logger
+class Logger
 {
-    public function log($data);
+    public function log($data){
+        //TODO: Implement log() method.
+    }
 }
