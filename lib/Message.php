@@ -8,5 +8,4 @@ class Message
     public $subject;
 
     public $text;
-
 }

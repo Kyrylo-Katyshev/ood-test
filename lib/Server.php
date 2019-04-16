@@ -19,5 +19,4 @@ class Server
     public function getProtocol(){
         return $this->protocol;
     }
-
 }
