@@ -39,8 +39,8 @@ interface MessageSender {
 }
 ```
 
-#### Supported Protocol Formats:
-##### V1:
+#### Each Server Protocol support own Message Format:
+##### Protocol v1:
 ```json
 {
   "name": "@author",
@@ -48,7 +48,7 @@ interface MessageSender {
 }
 ```
 
-##### V2:
+##### Protocol v2:
 ```json
 {
   "author": "@author",
@@ -57,12 +57,11 @@ interface MessageSender {
 }
 ```
 
-##### V3:
+##### Protocol v3:
 ```xml
 <message>
     <title>@subject</title>     
     <body>@text</body>
 </message>
 ```
-
 ### Task: Need to implement a class of MessageSender interface.
