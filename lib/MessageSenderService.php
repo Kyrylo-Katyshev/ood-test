@@ -1,21 +1,20 @@
 <?php
 namespace App;
 
-use App\Server\Client;
-use App\Server\ClientRegistry;
 use App\Server\ProtocolFactory;
 
-class MessageSenderService implements MessageSender, ClientRegistry
+class MessageSenderService implements MessageSender
 {
     private $protocolFactory;
 
-    private $logger;
+    private $clientStorage;
 
-    private $clients = [];
+    private $logger;
 
     public function __construct(ProtocolFactory $protocolFactory, Logger $logger)
     {
         $this->protocolFactory = $protocolFactory;
+        $this->clientStorage = $protocolFactory->createClientStorage();
         $this->logger = $logger;
     }
 
@@ -32,29 +31,15 @@ class MessageSenderService implements MessageSender, ClientRegistry
         }
     }
 
-    public function addProtocolClient($protocol, Client $client)
+
+    private function getProtocolClient($protocol)
     {
-        if (!$this->hasProtocolClient($protocol)) {
-            $this->clients[$protocol] = $client;
-        }
-
-        return true;
-    }
-
-    public function hasProtocolClient($protocol)
-    {
-
-        return array_key_exists($protocol, $this->clients);
-    }
-
-    public function getProtocolClient($protocol)
-    {
-        if (!$this->hasProtocolClient($protocol)) {
+        if (!$this->clientStorage->hasClient($protocol)) {
 
             $client = $this->protocolFactory->createClient($protocol);
-            $this->addProtocolClient($protocol, $client);
+            $this->clientStorage->addClient($protocol, $client);
         }
 
-        return $this->clients[$protocol];
+        return $this->clientStorage->getClient($protocol);
     }
 }

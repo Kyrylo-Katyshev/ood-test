@@ -48,4 +48,12 @@ class ProtocolFactory
 
         return $client;
     }
+
+    /**
+     * @return ProtocolClientStorage
+     */
+    public function createClientStorage()
+    {
+        return new ProtocolClientStorage();
+    }
 }
